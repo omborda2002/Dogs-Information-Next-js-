@@ -1,0 +1,29 @@
+The Dog API - API Key
+
+Thanks for signing up, welcome to the API!
+
+Your API key:
+
+f5cd8e6f-1304-49b0-8bcf-0bc247f65a37
+
+Use it as the 'x-api-key' header when making any request to the API, or by adding as a query string parameter e.g. 'api_key=f5cd8e6f-1304-49b0-8bcf-0bc247f65a37' More details on authentication.
+
+API Documentation | Postman Collection | Public Forum
+
+Join our new API Slack Group - That API Slack Group
+
+All the best, Aden & That API Team.
+
+p.s. We build APIs for companies & good causes. If you're interested find out more at https://thatapicompany.com
+
+e.g. https://thecatapi.com/v1/images?api_key=ABC123
+
+
+
+
+
+
+    LINKS                                 PAGES
+
+http://localhost:3000/api/dogs -->      all dogs
+http://localhost:3000/api/dogs/[id] --> perticuler dog

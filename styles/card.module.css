@@ -1,0 +1,26 @@
+.card {
+  width: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-height: 300px;
+  margin: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: rgba(220, 217, 217, 0.537);
+}
+.p_for {
+  font-size: 14px;
+  font-weight: 300;
+}
+.h2 {
+  margin-top: 10px;
+  font-weight: 400;
+}
+.card_in {
+  padding: 10px;
+}
+.imgs {
+  width: 250px;
+  height: auto;
+  border-radius: 10px 10px 0px 0px;
+}
