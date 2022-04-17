@@ -18,3 +18,5 @@
     },
   },
 ];
+// https://example.com/https://cdn2.thedogapi.com/images/SyYtQe5V7.jpg?w=640&q=75 1x,
+// https://example.com/https://cdn2.thedogapi.com/images/SyYtQe5V7.jpg?w=1080&q=75 2x

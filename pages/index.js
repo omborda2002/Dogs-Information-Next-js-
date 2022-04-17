@@ -5,8 +5,6 @@ import Navbar from "../components/Navbar";
 import DefaultLayout from "../layouts/DefaultLayout";
 
 export default function Home() {
-  console.log("index");
-
   return (
     <div className={styles.container}>
       <Head>

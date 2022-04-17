@@ -5,20 +5,21 @@ import DefaultLayout from "../../layouts/DefaultLayout";
 import axios from "axios";
 import Style from "../../styles/inImage.module.css";
 
-export default function Ids() {
-  const [dog, setDog] = useState([]);
-  const router = useRouter();
+export default function Ids(props) {
+  const dd = JSON.parse(props.data);
+  const [dog, setDog] = useState(dd);
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (!router.isReady) return;
-    const { id } = router.query;
-    const fetching = async () => {
-      const res = await axios(`/api/dogs/${id}`);
-      const data = res.data;
-      setDog(data);
-    };
-    fetching();
-  }, [router.isReady]);
+  // useEffect(() => {
+  //   if (!router.isReady) return;
+  //   const { id } = router.query;
+  //   const fetching = async () => {
+  //     const res = await axios(`/api/dogs/${id}`);
+  //     const data = res.data;
+  //     setDog(data);
+  //   };
+  //   fetching();
+  // }, [router.isReady]);
 
   return (
     <>
@@ -26,11 +27,21 @@ export default function Ids() {
         <div className={Style.con}>
           {/* ID: {id} */}
           <h1>Dog Data</h1>
-          <img
+          {/* <img
             className={Style.imgSrc}
             src={dog && dog?.image?.url}
             alt={dog && dog?.name}
+          /> */}
+          <Image
+            src={dog && dog?.image?.url}
+            alt={dog && dog?.name}
+            // loader={myLoader}
+            width={500}
+            height={500}
+            layouts="responsive"
+            objectFit="contain"
           />
+
           <p>Name : {dog.name ? dog.name : "Not found"}</p>
           <p>bread_for : {dog.bred_for ? dog.bred_for : "Not found"}</p>
           <p>
@@ -53,3 +64,15 @@ export default function Ids() {
     </>
   );
 }
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const response = await axios(`http://localhost:3000/api/dogs/${id}`);
+  const data = JSON.stringify(response.data);
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
+
+// const myLoader = ({ src, width, quality }) => {
+  // return `https://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+// }

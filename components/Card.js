@@ -11,14 +11,16 @@ export default function Card(props) {
       className={style.card}
       onClick={() => router.push(`/dogs/${props.id}`)}
     >
-      {/* <Image
-      src={u}
-      alt="Picture of the author"
+      <Image
+      src={props.image}
+      alt={props.name}
       width={500}
       height={500}
-    /> */}
+      layouts="responsive"
+      objectFit="contain"
+    />
 
-      <img className={style.imgs} src={props.image} alt={props.name} />
+      {/* <img className={style.imgs} src={props.image} alt={props.name} /> */}
       <div className={style.card_in}>
         <h2 className={style.h2}>{props.name}</h2>
         <p className={style.p_for}>{props.bred_for} </p>
