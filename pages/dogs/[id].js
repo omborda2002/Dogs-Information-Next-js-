@@ -8,6 +8,8 @@ import Style from "../../styles/inImage.module.css";
 export default function Ids(props) {
   const dd = JSON.parse(props.data);
   const [dog, setDog] = useState(dd);
+
+  //This commented code it's also working.
   // const router = useRouter();
 
   // useEffect(() => {
@@ -64,6 +66,8 @@ export default function Ids(props) {
     </>
   );
 }
+
+// Server HTML file automatically generated and send --> to direct client
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const response = await axios(`http://localhost:3000/api/dogs/${id}`);
@@ -73,6 +77,7 @@ export async function getServerSideProps(context) {
   };
 }
 
+// FIXME: Image Loader add
 // const myLoader = ({ src, width, quality }) => {
-  // return `https://localhost:3000/${src}?w=${width}&q=${quality || 75}`
+// return `https://localhost:3000/${src}?w=${width}&q=${quality || 75}`
 // }
