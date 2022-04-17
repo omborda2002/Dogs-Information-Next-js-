@@ -70,7 +70,15 @@ export default function Ids(props) {
 // Server HTML file automatically generated and send --> to direct client
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const response = await axios(`https://dogs-collections-8o7kritoi-omborda2002.vercel.app/api/dogs/${id}`);
+  const { req, query, res, asPath, pathname } = context;
+  let host;
+  if (req) {
+    host = req.headers.host; // will give you localhost:3000
+  }
+
+  const response = await axios(
+    `${host === "localhost:3000" ? "http" : "https"}://${host}/api/dogs/${id}`
+  );
   const data = JSON.stringify(response.data);
   return {
     props: { data }, // will be passed to the page component as props
